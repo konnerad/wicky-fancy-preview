@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wicky — Fancy preview</title>
+  <meta name="robots" content="noindex">
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      background: #65ff00;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    .fancy-roulette {
+      box-sizing: border-box; width: 100%; min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px; background: transparent;
+    }
+    .fancy-roulette__frame {
+      border: 0; display: block;
+      aspect-ratio: 9 / 16;
+      height: min(82dvh, 820px); width: auto; max-width: 88vw;
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      background: #000;
+    }
+    @media (max-width: 640px) {
+      .fancy-roulette__frame {
+        height: min(72dvh, 720px); max-width: 80vw; border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fancy-roulette" role="region" aria-label="Random TikTok using Fancy">
+    <iframe
+      class="fancy-roulette__frame"
+      id="fancyRouletteFrame"
+      src="about:blank"
+      allow="autoplay; encrypted-media; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="TikTok using the Fancy sound"></iframe>
+  </div>
+
+  <script>
+    var videos = [
+      "7637091525523967254","7632017177872321814","7632246812484717846",
+      "7637594057027456278","7633106955896114454","7630454523424935191",
+      "7636745819756023062","7630810402221198614","7633408424994163990",
+      "7640423897569152259","7637059924010224918","7631129257342684438",
+      "7634260328347487510","7639065003563289878","7635194144717114626",
+      "7637430243065646358","7638225374933011734","7637155403859496215",
+      "7632662078477585667","7630919916241030422","7637562472282574102",
+      "7639007167009557783","7632641283126742294","7632013449261829379",
+      "7633066897998744854","7637535113244331286","7630546104320265494",
+      "7637947634086382870","7634472872429260054","7636487884807081218",
+      "7635390808660675862","7630910575173717270","7635265391618428182",
+      "7639095829134953750","7639352759883484438","7635278221897977110",
+      "7638350643752652054","7639286698236480790","7630527233001786646",
+      "7637957700608888086","7630557827651685654","7632311296599395586",
+      "7634967030885649687","7631927131240467734","7638245618707729686"
+    ];
+    var id = videos[Math.floor(Math.random() * videos.length)];
+    document.getElementById("fancyRouletteFrame").src =
+      "https://www.tiktok.com/player/v1/" + id
+      + "?music_info=1&description=0&rel=0&loop=1&autoplay=1";
+  </script>
+</body>
+</html>
